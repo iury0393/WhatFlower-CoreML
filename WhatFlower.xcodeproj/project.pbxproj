@@ -13,6 +13,7 @@
 		8A0FC08028D9E70800EE8E6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0FC07E28D9E70800EE8E6E /* Main.storyboard */; };
 		8A0FC08228D9E70900EE8E6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A0FC08128D9E70900EE8E6E /* Assets.xcassets */; };
 		8A0FC08528D9E70900EE8E6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0FC08328D9E70900EE8E6E /* LaunchScreen.storyboard */; };
+		8A0FC08D28DA283700EE8E6E /* FlowerClassifier.mlkitmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8A0FC08C28DA283700EE8E6E /* FlowerClassifier.mlkitmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8A0FC08128D9E70900EE8E6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A0FC08428D9E70900EE8E6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A0FC08628D9E70900EE8E6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A0FC08C28DA283700EE8E6E /* FlowerClassifier.mlkitmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlkitmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,38 @@
 			children = (
 				8A0FC07828D9E70800EE8E6E /* AppDelegate.swift */,
 				8A0FC07A28D9E70800EE8E6E /* SceneDelegate.swift */,
-				8A0FC07C28D9E70800EE8E6E /* ViewController.swift */,
-				8A0FC07E28D9E70800EE8E6E /* Main.storyboard */,
-				8A0FC08128D9E70900EE8E6E /* Assets.xcassets */,
-				8A0FC08328D9E70900EE8E6E /* LaunchScreen.storyboard */,
+				8A0FC09028DA292400EE8E6E /* View */,
+				8A0FC08F28DA291A00EE8E6E /* Controller */,
+				8A0FC08E28DA290F00EE8E6E /* Utils */,
 				8A0FC08628D9E70900EE8E6E /* Info.plist */,
 			);
 			path = WhatFlower;
+			sourceTree = "<group>";
+		};
+		8A0FC08E28DA290F00EE8E6E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8A0FC08128D9E70900EE8E6E /* Assets.xcassets */,
+				8A0FC08328D9E70900EE8E6E /* LaunchScreen.storyboard */,
+				8A0FC08C28DA283700EE8E6E /* FlowerClassifier.mlkitmodel */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8A0FC08F28DA291A00EE8E6E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8A0FC07C28D9E70800EE8E6E /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8A0FC09028DA292400EE8E6E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A0FC07E28D9E70800EE8E6E /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +168,7 @@
 				8A0FC07D28D9E70800EE8E6E /* ViewController.swift in Sources */,
 				8A0FC07928D9E70800EE8E6E /* AppDelegate.swift in Sources */,
 				8A0FC07B28D9E70800EE8E6E /* SceneDelegate.swift in Sources */,
+				8A0FC08D28DA283700EE8E6E /* FlowerClassifier.mlkitmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
