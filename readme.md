@@ -23,7 +23,7 @@ A app that tells the classification of a flower with the help of Machine Learnin
 ### What i do
 
 * How to use CoreML
-* How to convert Caffe Model into MLModel
+* How to convert Caffe Model into MLModel, using python
 * How to get Classifications from the model
 * How to use Alamofire and SwiftyJson
 * How to use SDWebImage
