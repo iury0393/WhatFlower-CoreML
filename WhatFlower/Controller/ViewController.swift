@@ -85,9 +85,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 case .success(let data):
                     let pageID = data["query"]["pageids"][0].string!
                     let flowerDescription = data["query"]["pages"][pageID]["extract"].string!
-                    let flowerImageURL = data["query"]["pages"][pageID]["thumbnail"]["source"].string!
+                    print(data)
+                    if let flowerImageURL = data["query"]["pages"][pageID]["thumbnail"]["source"].string {
+                        self.imageView.sd_setImage(with: URL(string: flowerImageURL))
+                    }
                     self.label.text = flowerDescription
-                    self.imageView.sd_setImage(with: URL(string: flowerImageURL))
                 case .failure(let error):
                     debugPrint(error)
                 }
