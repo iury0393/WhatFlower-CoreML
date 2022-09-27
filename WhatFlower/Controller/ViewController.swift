@@ -10,6 +10,7 @@ import CoreML
 import Vision
 import Alamofire
 import SwiftyJSON
+import SDWebImage
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -30,7 +31,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let userPickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            imageView.image = userPickedImage
             
             guard let convertedCIImage = CIImage(image: userPickedImage) else {
                 fatalError("Could not convert to CIImage")
@@ -69,12 +69,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let parameters : [String:String] = [
             "format" : "json",
             "action" : "query",
-            "prop" : "extracts",
+            "prop" : "extracts|pageimages",
             "exintro" : "",
             "explaintext" : "",
             "titles" : flowerName,
             "indexpageids" : "",
             "redirects" : "1",
+            "pithumbsize" : "500"
         ]
         
         AF.request(wikipediaURl, parameters: parameters)
@@ -83,8 +84,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 switch response.result {
                 case .success(let data):
                     let pageID = data["query"]["pageids"][0].string!
-                    let flowerDescription = data["query"]["pages"][pageID]["extract"].string
+                    let flowerDescription = data["query"]["pages"][pageID]["extract"].string!
+                    let flowerImageURL = data["query"]["pages"][pageID]["thumbnail"]["source"].string!
                     self.label.text = flowerDescription
+                    self.imageView.sd_setImage(with: URL(string: flowerImageURL))
                 case .failure(let error):
                     debugPrint(error)
                 }

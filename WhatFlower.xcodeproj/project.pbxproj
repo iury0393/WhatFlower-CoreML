@@ -17,6 +17,7 @@
 		8ABA48E228E34D5200EB0B61 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8ABA48E128E34D5200EB0B61 /* Alamofire */; };
 		8ABA48E528E34DA000EB0B61 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8ABA48E428E34DA000EB0B61 /* SwiftyJSON */; };
 		8ABA48EB28E364E800EB0B61 /* Wiki.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA48EA28E364E800EB0B61 /* Wiki.swift */; };
+		8ABA48EE28E37E0000EB0B61 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8ABA48ED28E37E0000EB0B61 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABA48EE28E37E0000EB0B61 /* SDWebImage in Frameworks */,
 				8ABA48E528E34DA000EB0B61 /* SwiftyJSON in Frameworks */,
 				8ABA48E228E34D5200EB0B61 /* Alamofire in Frameworks */,
 			);
@@ -128,6 +130,7 @@
 			packageProductDependencies = (
 				8ABA48E128E34D5200EB0B61 /* Alamofire */,
 				8ABA48E428E34DA000EB0B61 /* SwiftyJSON */,
+				8ABA48ED28E37E0000EB0B61 /* SDWebImage */,
 			);
 			productName = WhatFlower;
 			productReference = 8A0FC07528D9E70800EE8E6E /* WhatFlower.app */;
@@ -160,6 +163,7 @@
 			packageReferences = (
 				8ABA48E028E34D5200EB0B61 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8ABA48E328E34DA000EB0B61 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				8ABA48EC28E37E0000EB0B61 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 8A0FC07628D9E70800EE8E6E /* Products */;
 			projectDirPath = "";
@@ -428,6 +432,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8ABA48EC28E37E0000EB0B61 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -440,6 +452,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8ABA48E328E34DA000EB0B61 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		8ABA48ED28E37E0000EB0B61 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ABA48EC28E37E0000EB0B61 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
