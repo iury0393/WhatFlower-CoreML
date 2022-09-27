@@ -17,16 +17,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mrZ-WY-fsv">
-                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <rect key="frame" x="0.0" y="91" width="390" height="390"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mrZ-WY-fsv" secondAttribute="height" multiplier="1:1" id="C7u-dc-gN7"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eVj-ic-5aN">
+                                <rect key="frame" x="16" y="496" width="358" height="314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mrZ-WY-fsv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="B0f-rP-MV1"/>
-                            <constraint firstItem="mrZ-WY-fsv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NqS-id-rDB"/>
-                            <constraint firstItem="mrZ-WY-fsv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="SP7-7T-tSl"/>
-                            <constraint firstItem="mrZ-WY-fsv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fjZ-6C-xWc"/>
+                            <constraint firstItem="mrZ-WY-fsv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6ze-oI-siJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mrZ-WY-fsv" secondAttribute="trailing" id="F70-zQ-BCL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eVj-ic-5aN" secondAttribute="trailing" constant="16" id="Y6U-5j-EcW"/>
+                            <constraint firstItem="eVj-ic-5aN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ewp-XR-UwZ"/>
+                            <constraint firstItem="eVj-ic-5aN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gh9-UW-qAq"/>
+                            <constraint firstItem="eVj-ic-5aN" firstAttribute="top" secondItem="mrZ-WY-fsv" secondAttribute="bottom" constant="15" id="wDx-Wo-GJY"/>
+                            <constraint firstItem="mrZ-WY-fsv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zzt-Th-laK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aWg-6z-1Cz">
@@ -38,6 +50,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="mrZ-WY-fsv" id="NeA-IT-Q6X"/>
+                        <outlet property="label" destination="eVj-ic-5aN" id="43K-Ba-Ix0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

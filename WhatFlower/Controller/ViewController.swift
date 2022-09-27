@@ -9,10 +9,12 @@ import UIKit
 import CoreML
 import Vision
 import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var label: UILabel!
     
     let imagePicker = UIImagePickerController()
     let wikipediaURl = "https://en.wikipedia.org/w/api.php"
@@ -65,20 +67,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func requestInfo(flowerName: String) {
         let parameters : [String:String] = [
-        "format" : "json",
-        "action" : "query",
-        "prop" : "extracts",
-        "exintro" : "",
-        "explaintext" : "",
-        "titles" : flowerName,
-        "indexpageids" : "",
-        "redirects" : "1",
+            "format" : "json",
+            "action" : "query",
+            "prop" : "extracts",
+            "exintro" : "",
+            "explaintext" : "",
+            "titles" : flowerName,
+            "indexpageids" : "",
+            "redirects" : "1",
         ]
-
-        AF.request(wikipediaURl, method: .get, parameters: parameters)
+        
+        AF.request(wikipediaURl, parameters: parameters)
             .validate()
-            .responseJSON() { response in
-                print(response)
+            .responseDecodable(of: JSON.self) { response in
+                switch response.result {
+                case .success(let data):
+                    let pageID = data["query"]["pageids"][0].string!
+                    let flowerDescription = data["query"]["pages"][pageID]["extract"].string
+                    self.label.text = flowerDescription
+                case .failure(let error):
+                    debugPrint(error)
+                }
             }
     }
     
